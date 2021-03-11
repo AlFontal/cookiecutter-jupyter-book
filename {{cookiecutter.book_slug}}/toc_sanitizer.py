@@ -2,7 +2,7 @@
 
 from glob import glob
 
-for file in glob('{{ cookiecutter.book_name }}/_build/html/*.html'):
+for file in glob('{{ cookiecutter.book_slug }}/_build/html/*.html'):
     new_content = ''
     with open(file, 'r') as fr:
         for line in fr.readlines():
