@@ -26,6 +26,7 @@ pages:
     - pip install -r requirements.txt
     - jupyter-book build {{ cookiecutter.book_slug }}
     - test -f {{ cookiecutter.book_slug }}_toc.yml || jupyter-book toc {{ cookiecutter.book_slug }}
+    - curl -s -S https://gist.githubusercontent.com/AlFontal/896e180f9f7772c4825067591f34c94b/raw | python
     - curl -s -S https://cdn.plot.ly/plotly-latest.min.js > notebooks/_build/html/plotly.js
     - mv {{ cookiecutter.book_slug }}/_build/html/ public/
   artifacts:
