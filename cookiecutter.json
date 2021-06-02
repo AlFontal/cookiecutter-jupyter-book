@@ -1,13 +1,14 @@
 {
-  "author_name": "Captain Jupyter",
+  "author_name": "Alejandro Fontal",
   "github_username": "{{ cookiecutter.author_name.lower().replace(' ', '') }}",
   "book_name": "my-book",
+  "repo_link": "https://gitlab.com/user/repo-name",
   "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",
   "book_short_description": "This cookiecutter creates a simple boilerplate for a Jupyter Book.",
   "version": "'0.1.0'",
   "open_source_license": [
-    "MIT license",
     "BSD license",
+    "MIT license",
     "ISC license",
     "Apache Software License 2.0",
     "GNU General Public License v3",
