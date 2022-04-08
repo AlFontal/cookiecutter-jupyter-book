@@ -8,7 +8,7 @@
 title                       : {{ cookiecutter.book_name }}  # The title of the book. Will be placed in the left navbar.
 author                      : {{ cookiecutter.author_name }}  # The author of the book
 copyright                   : "{% now 'local', '%Y' %}"  # Copyright year to be placed in the footer
-logo                        : images/logo_air.png # A path to the book logo
+logo                        : images/logo.png # A path to the book logo
 
 execute:
   execute_notebooks: "off"
