@@ -1,7 +1,7 @@
 {
   "author_name": "Alejandro Fontal",
   "remote": ["github", "gitlab"],
-  "username": "{{ cookiecutter.author_name.lower().replace(' ', '') }}",
+  "username": "AlFontal",
   "repo_name": "jb-repo",
   "book_name": "my-book",
   "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",
