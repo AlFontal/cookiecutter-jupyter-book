@@ -17,12 +17,12 @@ def test_cookiecutter_default_options(base_command):
 
 with open("cookiecutter.json") as f:
     options = json.load(f)
-combinations = list(product(options["open_source_license"], options["include_ci"]))
+combinations = list(product(options["open_source_license"], options["remote"]))
 
 
-@mark.parametrize("open_source_license,include_ci", combinations)
-def test_cookiecutter_all_options(base_command, open_source_license, include_ci):
-    params = f" open_source_license='{open_source_license}' include_ci={include_ci}"
+@mark.parametrize("open_source_license,remote", combinations)
+def test_cookiecutter_all_options(base_command, open_source_license, remote):
+    params = f" open_source_license='{open_source_license}' remote={remote}"
     path = Path(base_command[1])
     result = subprocess.run(base_command[0] + params, shell=True)
     assert result.returncode == 0
@@ -34,26 +34,26 @@ def test_cookiecutter_all_options(base_command, open_source_license, include_ci)
         pass
     assert len(list(path.joinpath("my_book", "my_book").iterdir())) == 8
     print(open_source_license)
-    print(include_ci)
+    print(remote)
     if open_source_license == "None":
-        if include_ci == "github":
+        if remote == "github":
             assert (
                 len(list(path.joinpath("my_book", ".github", "workflows").iterdir()))
                 == 1
             )
             assert len(list(path.joinpath("my_book").iterdir())) == 6
-        elif include_ci == "gitlab":
+        elif remote == "gitlab":
             assert len(list(path.joinpath("my_book").iterdir())) == 6
         else:
             assert len(list(path.joinpath("my_book").iterdir())) == 5
     else:
-        if include_ci == "github":
+        if remote == "github":
             assert (
                 len(list(path.joinpath("my_book", ".github", "workflows").iterdir()))
                 == 1
             )
             assert len(list(path.joinpath("my_book").iterdir())) == 7
-        elif include_ci == "gitlab":
+        elif remote == "gitlab":
             assert len(list(path.joinpath("my_book").iterdir())) == 7
         else:
             assert len(list(path.joinpath("my_book").iterdir())) == 6
@@ -89,7 +89,7 @@ def test_jupyter_book_cookiecutter(base_command):
 def test_warning_message(base_command, username, service, msg):
     path = Path(base_command[1])
     result = subprocess.run(
-        base_command[0] + f" include_ci={service}", shell=True, capture_output=True
+        base_command[0] + f" remote={service}", shell=True, capture_output=True
     )
     print(result.stdout.decode("ascii"))
     assert result.returncode == 0

@@ -54,8 +54,8 @@ def _message_box(msg, color="green", doprint=True, print_func=print):
 ##############################################################################
 # Post-gen script
 
-github = "{{cookiecutter.include_ci}}" == "github"
-gitlab = "{{cookiecutter.include_ci}}" == "gitlab"
+github = "{{cookiecutter.remote}}" == "github"
+gitlab = "{{cookiecutter.remote}}" == "gitlab"
 license = "{{cookiecutter.open_source_license}}" == "None"
 
 
