@@ -48,7 +48,7 @@ $ pip install -U cookiecutter
 2. Use `cookiecutter-jupyter-book` to generate a Jupyter Book template and fill out the requested information (default templating values are shown in square brackets `[]` and will be used if no other information is entered):
 
 ```bash
-$ cookiecutter git@github.com:executablebooks/cookiecutter-jupyter-book.git
+$ cookiecutter git@github.com:AlFontal/cookiecutter-jupyter-book.git
 
 author_name [Captain Jupyter]: Alejandro Fontal
 github_or_gitlab_username [AlFontal]:
