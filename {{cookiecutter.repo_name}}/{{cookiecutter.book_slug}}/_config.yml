@@ -25,7 +25,7 @@ html:
   use_repository_button: true
   use_issues_button: true
   favicon: images/favicon.ico
-  baseurl: https://{{ cookiecutter.github_username }}/{{ cookiecutter.remote}}.io/{{ cookiecutter.repo_name}}/
+  baseurl: https://{{ cookiecutter.username }}/{{ cookiecutter.remote}}.io/{{ cookiecutter.repo_name}}/
 
   {%- if cookiecutter.include_alejandro_banner == "y" -%}  
   extra_navbar: |

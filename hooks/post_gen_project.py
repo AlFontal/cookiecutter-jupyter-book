@@ -76,14 +76,14 @@ if license:
 
 if (
     not requests.get(
-        "http://www.github.com/{{cookiecutter.github_username}}"
+        "http://www.{{cookiecutter.remote}}.com/{{cookiecutter.username}}"
     ).status_code
     < 400
 ):
     _message_box(
         "WARNING:\n"
-        "Could not find the user '{{cookiecutter.github_username}}' on github.com.\n"
-        "Please check the 'github_username' you entered.\n"
+        "Could not find the user '{{cookiecutter.username}}' on {{cookiecutter.remote}}.com.\n"
+        "Please check the 'username' you entered.\n"
         "If you are not using github.com you may ignore this warning.",
         color="orange",
     )

@@ -5,7 +5,7 @@
   "repo_name": "jb-repo",
   "book_name": "my-book",
   "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "repo_link": "https://{{ cookiecutter.remote }}.com/{{ cookiecutter.username }}/repo-name",
+  "repo_link": "https://{{ cookiecutter.remote }}.com/{{ cookiecutter.username }}/{{ cookiecutter.repo_name }}",
   "book_short_description": "This cookiecutter creates a simple boilerplate for a Jupyter Book.",
   "version": "'0.1.0'",
   "open_source_license": ["BSD license", "MIT license", "GNU General Public License v3", "None" ],
