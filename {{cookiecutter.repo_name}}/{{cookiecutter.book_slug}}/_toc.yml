@@ -1,0 +1,12 @@
+- format: jb-book
+- root: intro
+
+parts:
+ - caption: CONTENT
+    chapters:
+    - file: content
+      title: Content
+    - file: markdown
+      title: Markdown
+    - file: notebooks
+      title: Notebooks
