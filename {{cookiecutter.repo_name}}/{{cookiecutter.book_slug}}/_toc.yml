@@ -1,8 +1,7 @@
 - format: jb-book
 - root: intro
-
-parts:
- - caption: CONTENT
+  parts:
+  - caption: CONTENT
     chapters:
     - file: content
       title: Content
