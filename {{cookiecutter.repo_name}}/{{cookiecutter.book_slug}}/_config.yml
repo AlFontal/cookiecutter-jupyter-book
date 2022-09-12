@@ -15,19 +15,29 @@ execute:
 
 repository:
   url: {{ cookiecutter.repo_link }}
-  {%- if cookiecutter.remote == "Github" -%}  
+
+  {% if cookiecutter.remote == "github" -%}  
+  
   branch: main
-  {%- elif cookiecutter.remote == "Gitlab" -%}
+  
+  {% elif cookiecutter.remote == "gitlab" -%}
+  
   branch: master
-  {%- endif -%}
+  
+  {% endif -%}
 
 html:
   use_repository_button: true
   use_issues_button: true
   favicon: images/favicon.ico
-  baseurl: https://{{ cookiecutter.username }}/{{ cookiecutter.remote}}.io/{{ cookiecutter.repo_name}}/
-
-  {%- if cookiecutter.include_alejandro_banner == "y" -%}  
+  baseurl: 'https://{{cookiecutter.username.lower()}}.{{ cookiecutter.remote}}.io/{{ cookiecutter.repo_name}}'
+ 
+  {% if cookiecutter.remote == "github" -%}
+  comments:
+    utterances:
+      repo: '{{ cookiecutter.username }}/{{ cookiecutter.repo_name }}'
+  {% endif -%}
+  {% if cookiecutter.include_alejandro_banner == "y" -%}  
   extra_navbar: |
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <div>           
@@ -49,7 +59,7 @@ html:
             <a href="https://twitter.com/alefontal" class="fa fa-twitter" style="font-size: 25px;"></a></a>
             <a href="mailto:alejandro.fontal.92@gmail.com" class="fa fa-envelope" style="font-size: 25px;"></a></a>
             </div>
-  {%- endif -%}
+  {% endif -%}
 
 sphinx:
   config:

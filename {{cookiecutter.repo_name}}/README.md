@@ -1,4 +1,4 @@
-# {{ cookiecutter.book_name }}
+# {{ cookiecutter.repo_name }}
 
 {{ cookiecutter.book_short_description }}
 
