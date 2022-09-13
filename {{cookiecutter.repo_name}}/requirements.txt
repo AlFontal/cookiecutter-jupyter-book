@@ -1,4 +1,5 @@
 jupyter-book
 matplotlib
 numpy
+html5lib
 {% if cookiecutter.remote == 'github' -%}ghp-import{% endif %}

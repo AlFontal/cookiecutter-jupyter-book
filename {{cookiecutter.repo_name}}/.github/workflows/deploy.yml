@@ -30,6 +30,10 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build {{ cookiecutter.book_slug }}
+    
+    - name: Clean notebook outputs for nicer HTML render
+      run: curl -s -S https://gist.githubusercontent.com/AlFontal/896e180f9f7772c4825067591f34c94b/raw > clean_notebook.py; 
+              python clean_notebook.py --path {{ cookiecutter.book_slug }}
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
